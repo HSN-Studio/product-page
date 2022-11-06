@@ -1,0 +1,87 @@
+$orange1: hsl(26, 100%, 55%);
+$orange2: hsl(25, 100%, 94%);
+$blue1: hsl(220, 13%, 13%);
+$blue2: hsl(219, 9%, 45%);
+$blue3: hsl(220, 14%, 75%);
+$blue4: hsl(223, 64%, 98%);
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid $blue3;
+}
+.leftSection,
+.rightSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3vw;
+}
+.hamburger {
+  display: none;
+}
+.logo {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 138px;
+  height: auto;
+}
+.menu {
+  padding: 2rem 0;
+}
+.menuItems {
+  list-style: none;
+  color: $blue2;
+  display: flex;
+  gap: 2vw;
+  padding: 0;
+}
+.menuItems li {
+  position: relative;
+}
+.menuItems li:hover {
+  color: $blue1;
+  cursor: pointer;
+}
+.menu li:hover:before {
+  content: "";
+  background-color: $orange1;
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  bottom: -2rem;
+}
+
+.cartIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cartIcon path:hover {
+  fill: $blue1;
+  cursor: pointer;
+}
+.avatar {
+  height: 3rem;
+  width: auto;
+}
+.avatar:hover {
+  cursor: pointer;
+  border: 2px solid $orange1;
+  border-radius: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+  .menu ul {
+    display: none;
+  }
+  .hamburger {
+    display: inline-flex;
+  }
+  .avatar {
+    height: 2em;
+  }
+}

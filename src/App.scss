@@ -1,8 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+$orange1: hsl(26, 100%, 55%);
+$orange2: hsl(25, 100%, 94%);
+$blue1: hsl(220, 13%, 13%);
+$blue2: hsl(219, 9%, 45%);
+$blue3: hsl(220, 14%, 75%);
+$blue4: hsl(223, 64%, 98%);
+// CSS Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Kumbh Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body p {
+  font-size: 16px;
+}
+.container {
+  padding: 0 10%;
 }
