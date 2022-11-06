@@ -3,9 +3,10 @@ import { createContext } from "react";
 
 const storeContext = createContext();
 const setstoreContext = createContext();
-function GlobalContext({ children }) {
+function StoreProvider({ children }) {
   const [store, setstore] = useState({
     applicationUrl: "http://localhost:3000/",
+    productQuantity: 3,
   });
   return (
     <>
@@ -18,5 +19,5 @@ function GlobalContext({ children }) {
   );
 }
 
-export default GlobalContext;
+export default StoreProvider;
 export { storeContext, setstoreContext };

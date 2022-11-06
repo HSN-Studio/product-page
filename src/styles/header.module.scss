@@ -17,7 +17,12 @@ $blue4: hsl(223, 64%, 98%);
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+.leftSection {
   gap: 3vw;
+}
+.rightSection {
+  gap: 1vw;
 }
 .hamburger {
   display: none;
@@ -55,14 +60,28 @@ $blue4: hsl(223, 64%, 98%);
   bottom: -2rem;
 }
 
-.cartIcon {
+.cartIcon,
+.emptyCartIcon {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.cartIcon path:hover {
+.cartIcon path:hover,
+.emptyCartIcon path:hover {
   fill: $blue1;
   cursor: pointer;
+}
+.cartIcon::after {
+  content: attr(data-quantity);
+  position: relative;
+  left: -1em;
+  top: -1em;
+  background-color: $orange1;
+  color: $blue4;
+  font-size: 0.6em;
+  font-weight: bold;
+  padding: 0.1rem 0.5rem;
+  border-radius: 10px;
 }
 .avatar {
   height: 3rem;
@@ -74,6 +93,7 @@ $blue4: hsl(223, 64%, 98%);
   border-radius: 50%;
 }
 
+// Smaller Screens (Mobile & Tablet)
 @media only screen and (max-width: 768px) {
   .menu ul {
     display: none;
