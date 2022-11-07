@@ -1,14 +1,15 @@
 @import "./variables.scss";
+@import "./button";
 .cart {
   position: absolute;
   top: 0;
   right: 0;
   height: 0;
   aside {
-    max-width: 350px;
-    min-height: 30vh;
+    padding: 1rem;
+    max-width: 80vw;
     border-radius: 10px;
-    box-shadow: 0 20px 20px 5px rgb(0 0 0 / 5%);
+    box-shadow: 0 15px 20px 5px rgb(0 0 0 / 10%);
     background-color: #fff;
     position: relative;
     top: 5rem;
@@ -17,11 +18,17 @@
   p.cartTitle {
     color: #000;
     font-weight: bold;
-    padding: 1rem;
+    padding: 1rem 0;
     border-bottom: 1px solid $blue3;
   }
+  p.emptyCartTitle {
+    color: $blue2;
+    text-align: center;
+    padding: 5rem 2rem;
+    font-weight: bold;
+  }
   .cartItem {
-    padding: 1rem;
+    padding: 1rem 0;
     display: flex;
     gap: 0.5em;
     align-items: center;
@@ -44,5 +51,20 @@
   .cartItemDel img {
     width: 16px;
     height: auto;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .checkoutBtn {
+    @extend .btn;
+    &:hover {
+      color: #000;
+      cursor: pointer;
+    }
+  }
+}
+@media only screen and (max-width: 375px) {
+  aside {
+    min-width: 80vw;
   }
 }
