@@ -1,3 +1,42 @@
 @import "variables.scss";
 @import "_button.scss";
-
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.productSection {
+  @include flex-center();
+  margin: 5rem 0;
+}
+.leftCol,
+.rightCol {
+  padding: 0 1rem;
+}
+.quantityBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: $blue4;
+  p {
+    font-weight: bold;
+  }
+  img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    font-size: 20px;
+    background-color: $blue4;
+    border: none;
+    font-weight: bold;
+    color: $orange1;
+    border-radius: 0.5rem;
+    &:hover {
+      cursor: pointer;
+      color: hsl(26deg 100% 75%);
+    }
+  }
+}

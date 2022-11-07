@@ -61,6 +61,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  &:hover {
+    cursor: pointer;
+  }
 }
 .cartIcon path:hover,
 .emptyCartIcon path:hover {

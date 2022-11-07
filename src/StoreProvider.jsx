@@ -10,6 +10,7 @@ function StoreProvider({ children }) {
       {
         id: 1,
         title: "Fall Limited Edition Sneakers",
+        originalPrice: 250,
         price: 125,
         quantity: 3,
       },
