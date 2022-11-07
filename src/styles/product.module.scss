@@ -11,32 +11,87 @@
 }
 .leftCol,
 .rightCol {
-  padding: 0 1rem;
+  @include flex-center();
+  gap: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+  padding: 0 2rem;
 }
-.quantityBtn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  border-radius: 0.5rem;
-  background-color: $blue4;
-  p {
-    font-weight: bold;
+
+.leftCol {
+  .mainImage img {
+    max-width: 100%;
+    border-radius: 1rem;
   }
-  img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1em;
-    font-size: 20px;
-    background-color: $blue4;
-    border: none;
+}
+.rightCol {
+  gap: 1rem;
+  .companyName {
     font-weight: bold;
     color: $orange1;
-    border-radius: 0.5rem;
-    &:hover {
-      cursor: pointer;
-      color: hsl(26deg 100% 75%);
+  }
+  .productTitle {
+    font-size: 3em;
+  }
+  .productDescription {
+    color: $blue2;
+  }
+  .productPrice {
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+  .productOriginalPrice {
+    color: $blue3;
+    font-weight: bold;
+    text-decoration: line-through;
+  }
+  .addToCart {
+    display: flex;
+    gap: 1em;
+    .quantityBtn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border-radius: 0.5rem;
+      background-color: $blue4;
+      p {
+        font-weight: bold;
+      }
+      img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1em;
+        font-size: 20px;
+        background-color: $blue4;
+        border: none;
+        font-weight: bold;
+        color: $orange1;
+        border-radius: 0.5rem;
+        &:hover {
+          cursor: pointer;
+          color: hsl(26deg 100% 75%);
+        }
+      }
+    }
+    .addToCartBtn {
+      @extend .btn;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5em;
+      padding: 1em 2em;
+      margin: 0;
+      box-shadow: 0 15px 20px 5px hsla(26, 100%, 75%, 0.296);
+      &:hover {
+        background-color: hsl(26deg 100% 75%);
+        cursor: pointer;
+      }
+      .addToCartIcon path {
+        fill: #fff;
+      }
     }
   }
 }

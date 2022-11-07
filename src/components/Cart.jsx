@@ -2,11 +2,11 @@ import React, { useContext } from "react";
 import styles from "../styles/cart.module.scss";
 import { storeContext } from "../StoreProvider";
 import CartItem from "./CartItem";
-export default function Cart({ show }) {
+export default function Cart({ visibility }) {
   const store = useContext(storeContext);
   const cart = store.cart;
   return (
-    show && (
+    visibility && (
       <div className={styles.cart}>
         <aside>
           <p className={styles.cartTitle}>Cart</p>
