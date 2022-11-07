@@ -3,6 +3,7 @@ import avatar from "../images/image-avatar.png";
 import styles from "../styles/header.module.scss";
 import { storeContext, setstoreContext } from "../StoreProvider";
 import CartIcon from "./CartIcon";
+import Cart from "./Cart";
 function Header() {
   const store = useContext(storeContext);
   return (

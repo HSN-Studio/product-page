@@ -6,7 +6,14 @@ const setstoreContext = createContext();
 function StoreProvider({ children }) {
   const [store, setstore] = useState({
     applicationUrl: "http://localhost:3000/",
-    productQuantity: 3,
+    cart: [
+      {
+        id: 1,
+        title: "Fall Limited Edition Sneakers",
+        price: 125,
+        quantity: 3,
+      },
+    ],
   });
   return (
     <>
