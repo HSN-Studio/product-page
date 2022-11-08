@@ -1,4 +1,4 @@
-import React, { useContext, useState, useRef } from "react";
+import React, { useContext, useState, useRef, useEffect } from "react";
 import styles from "../styles/product.module.scss";
 import { storeContext, setstoreContext } from "../StoreProvider";
 import plusIcon from "../images/icon-plus.svg";
@@ -8,8 +8,11 @@ function Product({ id }) {
   const setStore = useContext(setstoreContext);
   const cart = store.cart;
   const productTitle = useRef();
-  const [quantity, setQuantity] = useState(1);
+  const [productQuantity, setQuantity] = useState(1);
   const findItem = cart.findIndex((cartItem) => cartItem.id === id);
+  useEffect(() => {
+    console.log(store, cart, productQuantity);
+  }, [store]);
 
   // const [activeImg, setActiveImg] = useState(
   //   "./product-images/1/image-product-1.jpg"
@@ -17,34 +20,37 @@ function Product({ id }) {
 
   // handler Functions
   const plusHandler = () => setQuantity((quantity) => quantity + 1);
-  const minusHandler = () => setQuantity((quantity) => quantity - 1);
+  const minusHandler = () =>
+    setQuantity((quantity) => (quantity > 1 ? quantity - 1 : quantity));
   const addToCartHandler = () => {
-    findItem === -1
-      ? setStore((prevStore) => {
-          console.log("not found");
-          return {
-            applicationUrl: prevStore.applicationUrl,
-            cart: [
-              ...prevStore.cart,
-              {
-                id: id,
-                title: productTitle.current.textContent,
-                quantity: quantity,
-                price: 125,
-                originalPrice: 250,
-              },
-            ],
-          };
-        })
-      : setStore((prevStore) => {
-          let updatedCart = cart;
-          updatedCart[findItem].quantity = updatedCart[findItem].quantity + 1;
-          console.log(store);
-          return {
-            applicationUrl: prevStore.applicationUrl,
-            cart: updatedCart,
-          };
-        });
+    if (findItem === -1) {
+      setStore((prevStore) => {
+        return {
+          applicationUrl: prevStore.applicationUrl,
+          cart: [
+            ...prevStore.cart,
+            {
+              id: id,
+              title: productTitle.current.textContent,
+              quantity: productQuantity,
+              price: 125,
+              originalPrice: 250,
+            },
+          ],
+        };
+      });
+    } else {
+      setStore((prevStore) => {
+        // external state
+        let updatedCart = prevStore.cart;
+        updatedCart[findItem].quantity += productQuantity;
+
+        return {
+          applicationUrl: prevStore.applicationUrl,
+          cart: updatedCart,
+        };
+      });
+    }
   };
   return (
     <main>
@@ -77,7 +83,7 @@ function Product({ id }) {
                 src={minusIcon}
                 onClick={minusHandler}
               ></img>
-              <p className={styles.productQuantity}>{quantity}</p>
+              <p className={styles.productQuantity}>{productQuantity}</p>
 
               <img
                 className={styles.plusBtn}
@@ -91,7 +97,7 @@ function Product({ id }) {
                   <path
                     d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
                     fill="#69707D"
-                    fill-rule="nonzero"
+                    fillRule="nonzero"
                   />
                 </svg>
               </span>
