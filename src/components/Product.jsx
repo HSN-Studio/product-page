@@ -3,6 +3,7 @@ import styles from "../styles/product.module.scss";
 import { storeContext, setstoreContext } from "../StoreProvider";
 import plusIcon from "../images/icon-plus.svg";
 import minusIcon from "../images/icon-minus.svg";
+import Gallery from "./Gallery";
 function Product({ id }) {
   const store = useContext(storeContext);
   const setStore = useContext(setstoreContext);
@@ -10,9 +11,12 @@ function Product({ id }) {
   const productTitle = useRef();
   const [productQuantity, setQuantity] = useState(1);
   const findItem = cart.findIndex((cartItem) => cartItem.id === id);
-  useEffect(() => {
-    console.log(store, cart, productQuantity);
-  }, [store]);
+  const thumbnails = [
+    "./product-images/1/thumbnails/image-product-1-thumbnail.jpg",
+    "./product-images/1/thumbnails/image-product-2-thumbnail.jpg",
+    "./product-images/1/thumbnails/image-product-3-thumbnail.jpg",
+    "./product-images/1/thumbnails/image-product-4-thumbnail.jpg",
+  ];
 
   // const [activeImg, setActiveImg] = useState(
   //   "./product-images/1/image-product-1.jpg"
@@ -56,9 +60,7 @@ function Product({ id }) {
     <main>
       <section className={styles.productSection}>
         <div className={styles.leftCol}>
-          <div className={styles.mainImage}>
-            <img src={`./product-images/${1}/image-product-1.jpg`}></img>
-          </div>
+          <Gallery productId={1} thumbnails={thumbnails} />
           <div className={styles.thumbnails}></div>
         </div>
         <div className={styles.rightCol}>
@@ -82,6 +84,7 @@ function Product({ id }) {
                 className={styles.minusBtn}
                 src={minusIcon}
                 onClick={minusHandler}
+                alt=" "
               ></img>
               <p className={styles.productQuantity}>{productQuantity}</p>
 
@@ -89,6 +92,7 @@ function Product({ id }) {
                 className={styles.plusBtn}
                 src={plusIcon}
                 onClick={plusHandler}
+                alt=" "
               ></img>
             </div>
             <div className={styles.addToCartBtn} onClick={addToCartHandler}>

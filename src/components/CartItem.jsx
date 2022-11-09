@@ -20,7 +20,7 @@ function CartItem({ cartItem }) {
     <div className={styles.cartItem}>
       <div className={styles.cartItemImg}>
         <img
-          src={`/product-images/${cartItem.id}/image-product-${cartItem.id}-thumbnail.jpg`}
+          src={`/product-images/${cartItem.id}/thumbnails/image-product-${cartItem.id}-thumbnail.jpg`}
         ></img>
       </div>
       <div className={styles.cartItemDetails}>

@@ -7,6 +7,7 @@ function StoreProvider({ children }) {
   const [store, setstore] = useState({
     applicationUrl: "http://localhost:3000/",
     cart: [],
+    lightBoxVisibility: true,
   });
   return (
     <>

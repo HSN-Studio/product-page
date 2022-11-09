@@ -10,7 +10,7 @@ function CartIcon() {
           .map((product) => product.quantity)
           .reduce((prevValue, currentValue) => prevValue + currentValue)
       : null;
-  const [showCart, setshowCart] = useState(true);
+  const [showCart, setshowCart] = useState(false);
   // Handler Functions
   const cartHandler = () => {
     setshowCart((prevState) => !prevState);

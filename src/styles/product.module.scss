@@ -16,15 +16,10 @@
   flex-direction: column;
   align-items: flex-start;
   width: 50%;
-  padding: 0 2rem;
+  padding: 0 5vw;
 }
 
-.leftCol {
-  .mainImage img {
-    max-width: 100%;
-    border-radius: 1rem;
-  }
-}
+
 .rightCol {
   gap: 1rem;
   .companyName {
@@ -32,14 +27,14 @@
     color: $orange1;
   }
   .productTitle {
-    font-size: 3em;
+    font-size: 3vw;
   }
   .productDescription {
     color: $blue2;
   }
   .productPrice {
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1.5vw;
   }
   .productOriginalPrice {
     color: $blue3;
@@ -48,8 +43,10 @@
   }
   .addToCart {
     display: flex;
+    flex-wrap: wrap;
     gap: 1em;
     .quantityBtn {
+      flex-grow: 1;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -78,6 +75,8 @@
     }
     .addToCartBtn {
       @extend .btn;
+      width: auto;
+      flex-grow: 1;
       display: inline-flex;
       justify-content: center;
       align-items: center;

@@ -1,0 +1,32 @@
+@import "variables.scss";
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gallery {
+  max-width: 100%;
+}
+.mainImage {
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+.thumbnails {
+  @include flex-center();
+  justify-content: space-between;
+  img {
+    max-width: 20%;
+    border-radius: 0.5rem;
+    &:hover {
+      cursor: pointer;
+      outline: 3px solid $orange1;
+    }
+  }
+}
