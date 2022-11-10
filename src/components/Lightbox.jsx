@@ -23,7 +23,6 @@ function Lightbox({ productId, thumbnails, activeImageId }) {
         ? element.classList.add("activeThumbnail")
         : element.classList.remove("activeThumbnail");
     });
-    console.log(imageId);
   }, [imageId]);
 
   const thumbnailHandler = ({ target }) => {

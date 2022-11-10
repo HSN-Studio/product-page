@@ -18,10 +18,6 @@ function Product({ id }) {
     "./product-images/1/thumbnails/image-product-4-thumbnail.jpg",
   ];
 
-  // const [activeImg, setActiveImg] = useState(
-  //   "./product-images/1/image-product-1.jpg"
-  // );
-
   // handler Functions
   const plusHandler = () => setQuantity((quantity) => quantity + 1);
   const minusHandler = () =>
@@ -75,7 +71,7 @@ function Product({ id }) {
           </p>
           <div className={styles.productPrice}>
             <h2>$125.00</h2>
-            <span className={styles.productDiscount}></span>
+            <span className={styles.productDiscount}>50%</span>
           </div>
           <p className={styles.productOriginalPrice}>$250.00</p>
           <div className={styles.addToCart}>

@@ -19,7 +19,6 @@
   padding: 0 5vw;
 }
 
-
 .rightCol {
   gap: 1rem;
   .companyName {
@@ -35,6 +34,16 @@
   .productPrice {
     font-weight: bold;
     font-size: 1.5vw;
+    display: flex;
+    align-items: center;
+    .productDiscount {
+      font-size: 1vw;
+      background-color: $orange2;
+      padding: 0.5em;
+      border-radius: 0.5em;
+      margin-left: 1em;
+      color: $orange1;
+    }
   }
   .productOriginalPrice {
     color: $blue3;
@@ -93,4 +102,7 @@
       }
     }
   }
+}
+
+@media screen and (max-width: 767px) {
 }
