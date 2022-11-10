@@ -35,6 +35,49 @@
     border-radius: 1rem;
     margin-bottom: 1rem;
   }
+
+  .navigationIcons {
+    position: relative;
+    top: -50%;
+    left: 50%;
+    height: 100%;
+    .iconPrevious,
+    .iconNext,
+    .iconClose {
+      position: absolute;
+      @include flex-center();
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      img {
+        all: unset;
+        height: 0.75rem;
+        &:hover {
+          filter: invert(52%) sepia(94%) saturate(1472%) hue-rotate(347deg)
+            brightness(101%) contrast(101%);
+          cursor: pointer;
+        }
+      }
+    }
+    .iconPrevious {
+      background-color: #fff;
+
+      left: -54%;
+      top: 0;
+    }
+    .iconNext {
+      background-color: #fff;
+
+      left: 46%;
+      top: 100;
+    }
+    .iconClose {
+      filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(175deg)
+        brightness(207%) contrast(101%);
+      top: -59%;
+      left: 43%;
+    }
+  }
 }
 .thumbnails {
   @include flex-center();
@@ -48,6 +91,7 @@
     &:hover {
       cursor: pointer;
       outline: 3px solid $orange1;
+      opacity: 0.75;
     }
   }
 }

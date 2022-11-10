@@ -6,9 +6,10 @@ function Gallery({ productId, thumbnails }) {
   const setStore = useContext(setstoreContext);
   const productThumbnails = thumbnails;
   const mainImage = useRef();
-  const [lightBoxVisibility, setlightBoxVisibility] = useState(false);
+  const [activeImage, setactiveImage] = useState(1);
   const thumbnailHandler = ({ target }) => {
     const id = target.dataset.id;
+    setactiveImage(id);
     const thumbnailImages = document.querySelectorAll(".thumbnail-images");
     thumbnailImages.forEach((element) => {
       element.dataset.id === id
@@ -17,7 +18,7 @@ function Gallery({ productId, thumbnails }) {
     });
     mainImage.current.src = `./product-images/${productId}/image-product-${id}.jpg`;
   };
-  const mainImageHandler = () => {
+  const mainImageHandler = (e) => {
     setStore((prevStore) => {
       const updatedStore = { ...prevStore };
       updatedStore.lightBoxVisibility = !updatedStore.lightBoxVisibility;
@@ -26,7 +27,11 @@ function Gallery({ productId, thumbnails }) {
   };
   return (
     <div className={styles.gallery}>
-      <Lightbox productId={productId} thumbnails={thumbnails} />
+      <Lightbox
+        productId={productId}
+        thumbnails={thumbnails}
+        activeImageId={activeImage}
+      />
       <div className={styles.mainImage}>
         <img
           src={`./product-images/${productId}/image-product-${productId}.jpg`}
