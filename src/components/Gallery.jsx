@@ -52,13 +52,13 @@ function Gallery({ productId, thumbnails }) {
           ref={mainImage}
           onClick={mainImageHandler}
         ></img>
-        <div className={styles.navigationIcons}>
-          <div className={styles.iconPrevious} onClick={prevBtnHandler}>
-            <img src={iconPrevious} className={styles.icon}></img>
-          </div>
-          <div className={styles.iconNext} onClick={nexBtnHandler}>
-            <img src={iconNext}></img>
-          </div>
+        {/* <div className={styles.navigationIcons}> */}
+        <div className={styles.iconPrevious} onClick={prevBtnHandler}>
+          <img src={iconPrevious} className={styles.icon}></img>
+        </div>
+        <div className={styles.iconNext} onClick={nexBtnHandler}>
+          <img src={iconNext}></img>
+          {/* </div> */}
         </div>
         <div className={styles.thumbnails}>
           {productThumbnails.map((path, i) => (

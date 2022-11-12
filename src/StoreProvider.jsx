@@ -5,7 +5,7 @@ const storeContext = createContext();
 const setstoreContext = createContext();
 function StoreProvider({ children }) {
   const [store, setstore] = useState({
-    applicationUrl: "http://localhost:3000/",
+    applicationUrl: ".",
     cart: [],
     lightBoxVisibility: false,
   });

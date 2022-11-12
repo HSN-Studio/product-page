@@ -25,6 +25,10 @@
   .navigationIcons {
     display: none;
   }
+  .iconNext,
+  .iconPrevious {
+    display: none;
+  }
   @include breakpoint(mobile) {
     // .navigationIcons {
     //   display: block;
@@ -64,28 +68,31 @@
       top: 0;
       left: 0;
       height: 100%;
-      .iconPrevious,
-      .iconNext {
-        position: relative;
-        top: 50%;
-        @include flex-center();
-        width: 30px;
-        height: 30px;
-        background-color: #fff;
-        border-radius: 50%;
-        img {
-          all: unset;
-          height: 0.75rem;
-          &:hover {
-            cursor: pointer;
-            filter: invert(52%) sepia(94%) saturate(1472%) hue-rotate(347deg)
-              brightness(101%) contrast(101%);
-          }
+    }
+    .iconPrevious,
+    .iconNext {
+      position: absolute;
+      top: 30%;
+      @include flex-center();
+      width: 40px;
+      height: 40px;
+      background-color: #fff;
+      border-radius: 50%;
+      img {
+        all: unset;
+        height: 0.75rem;
+        &:hover {
+          cursor: pointer;
+          filter: invert(52%) sepia(94%) saturate(1472%) hue-rotate(347deg)
+            brightness(101%) contrast(101%);
         }
       }
-      .iconNext {
-        left: 100%;
-      }
+    }
+    .iconNext {
+      right: 2%;
+    }
+    .iconPrevious {
+      left: 2%;
     }
   }
 }
