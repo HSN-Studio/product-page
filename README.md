@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Live](https://hasni.co/portfolio/sneakers)
+- Live Site URL: [Sneaker](https://hasni.co/portfolio/sneakers)
 
 ## My process
 
@@ -59,6 +59,6 @@ This simple looking App has many functionalities that has to be developed. Howev
 
 ## Author
 
-- Website - [Live URL](https://www.hasni.co/)
+- Website - [Hasni.co](https://www.hasni.co/)
 - Upwork - [@HassanR](https://www.upwork.com/freelancers/~01d9a777c26f1c5271)
 - Fiverr - [@HSN_Studio](https://www.fiverr.com/hsn_Studio)
