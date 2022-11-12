@@ -95,6 +95,8 @@
   cursor: pointer;
   outline: 3px solid $orange1;
   border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
 }
 
 // Smaller Screens (Mobile & Tablet)
