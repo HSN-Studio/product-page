@@ -21,6 +21,7 @@ function CartItem({ cartItem }) {
       <div className={styles.cartItemImg}>
         <img
           src={`${store.applicationUrl}/product-images/${cartItem.id}/thumbnails/image-product-${cartItem.id}-thumbnail.jpg`}
+          alt="Product"
         ></img>
       </div>
       <div className={styles.cartItemDetails}>
@@ -33,7 +34,7 @@ function CartItem({ cartItem }) {
         </div>
       </div>
       <div className={styles.cartItemDel}>
-        <img src={deleteIcon} onClick={deleteHandler}></img>
+        <img src={deleteIcon} onClick={deleteHandler} alt="Delete icon"></img>
       </div>
     </div>
   );
