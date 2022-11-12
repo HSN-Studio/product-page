@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://hasni.co/portfolio/sneakers)
+- Live Site URL: [Live](https://hasni.co/portfolio/sneakers)
 
 ## My process
 
