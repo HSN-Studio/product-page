@@ -26,7 +26,7 @@
   opacity: 0.5;
 }
 .mainImage {
-  max-width: 50vw;
+  max-width: 90vw;
   z-index: 2;
   img {
     max-width: 100%;
@@ -62,14 +62,14 @@
     .iconPrevious {
       background-color: #fff;
 
-      left: -54%;
-      top: 0;
+      left: -55%;
+      top: 0%;
     }
     .iconNext {
       background-color: #fff;
 
-      left: 46%;
-      top: 100;
+      right: 45%;
+      top: 0%;
     }
     .iconClose {
       filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(175deg)
@@ -83,7 +83,7 @@
   @include flex-center();
   justify-content: space-between;
   z-index: 2;
-  max-width: 50vw;
+  max-width: 90vw;
   img {
     max-width: 20%;
     max-height: 15vh;

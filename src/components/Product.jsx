@@ -70,10 +70,12 @@ function Product({ id }) {
             the weather can offer.
           </p>
           <div className={styles.productPrice}>
-            <h2>$125.00</h2>
-            <span className={styles.productDiscount}>50%</span>
+            <div className={styles.productDiscountedPrice}>
+              <h2>$125.00</h2>
+              <span className={styles.productDiscount}>50%</span>
+            </div>
+            <p className={styles.productOriginalPrice}>$250.00</p>
           </div>
-          <p className={styles.productOriginalPrice}>$250.00</p>
           <div className={styles.addToCart}>
             <div className={styles.quantityBtn}>
               <img

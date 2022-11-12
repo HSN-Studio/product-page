@@ -19,7 +19,7 @@ body p {
 }
 .container {
   padding: 0 10%;
-  @include for_breakpoint(mobile) {
+  @include breakpoint(mobile) {
     padding: 0;
   }
 }

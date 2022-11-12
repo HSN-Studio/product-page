@@ -1,5 +1,6 @@
 @import "./variables.scss";
 @import "./button";
+@import "./breakpoint";
 .cart {
   position: absolute;
   top: 0;
@@ -14,6 +15,11 @@
     position: relative;
     top: 5rem;
     right: 10vw;
+    @include breakpoint(mobile) {
+      right: 5vw;
+      min-width: 90vw;
+      max-width: 90vw;
+    }
   }
   p.cartTitle {
     color: #000;
@@ -32,6 +38,9 @@
     display: flex;
     gap: 0.5em;
     align-items: center;
+  }
+  .cartItemDetails {
+    flex-grow: 1;
   }
   .cartItem img {
     width: 50px;

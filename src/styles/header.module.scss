@@ -1,11 +1,15 @@
 @import "./variables.scss";
-
+@import "./breakpoint";
 .header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid $blue3;
+  @include breakpoint(mobile) {
+    border: none;
+    padding: 0 5%;
+  }
 }
 .leftSection,
 .rightSection {
@@ -22,6 +26,7 @@
 }
 .hamburger {
   display: none;
+  z-index: 3;
 }
 .logo {
   display: inline-flex;

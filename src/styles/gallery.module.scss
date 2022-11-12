@@ -1,4 +1,5 @@
 @import "variables.scss";
+@import "./breakpoint";
 @mixin flex-center {
   display: flex;
   justify-content: center;
@@ -13,9 +14,79 @@
     height: auto;
     border-radius: 1rem;
     margin-bottom: 1rem;
+
+    @include breakpoint(mobile) {
+      border-radius: 0;
+    }
   }
   &:hover {
     cursor: pointer;
+  }
+  .navigationIcons {
+    display: none;
+  }
+  @include breakpoint(mobile) {
+    // .navigationIcons {
+    //   display: block;
+    //   position: relative;
+    //   top: -50%;
+    //   left: 50%;
+    //   height: 100%;
+    //   .iconPrevious,
+    //   .iconNext {
+    //     position: absolute;
+    //     @include flex-center();
+    //     width: 30px;
+    //     height: 30px;
+    //     border-radius: 50%;
+    //     img {
+    //       all: unset;
+    //       height: 0.75rem;
+    //       &:hover {
+    //         filter: invert(52%) sepia(94%) saturate(1472%) hue-rotate(347deg)
+    //           brightness(101%) contrast(101%);
+    //         cursor: pointer;
+    //       }
+    //     }
+    //   }
+    //   .iconPrevious {
+    //     background-color: #fff;
+    //   }
+    //   .iconNext {
+    //     background-color: #fff;
+    //   }
+    // }
+    .navigationIcons {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 5%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      .iconPrevious,
+      .iconNext {
+        position: relative;
+        top: 50%;
+        @include flex-center();
+        width: 30px;
+        height: 30px;
+        background-color: #fff;
+        border-radius: 50%;
+        img {
+          all: unset;
+          height: 0.75rem;
+          &:hover {
+            cursor: pointer;
+            filter: invert(52%) sepia(94%) saturate(1472%) hue-rotate(347deg)
+              brightness(101%) contrast(101%);
+          }
+        }
+      }
+      .iconNext {
+        left: 100%;
+      }
+    }
   }
 }
 .thumbnails {
@@ -29,5 +100,9 @@
       outline: 3px solid $orange1;
       opacity: 0.75;
     }
+  }
+  @include breakpoint(mobile) {
+    padding: 0 5%;
+    display: none;
   }
 }

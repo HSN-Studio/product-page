@@ -1,15 +1,23 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import avatar from "../images/image-avatar.png";
 import styles from "../styles/header.module.scss";
 import { storeContext, setstoreContext } from "../StoreProvider";
 import CartIcon from "./CartIcon";
+import MobileMenu from "./MobileMenu";
 function Header() {
   const store = useContext(storeContext);
+  const [mobileMenu, setmobileMenu] = useState(false);
+  const mobileMenuHandler = (menu) => {
+    setmobileMenu(menu);
+  };
   return (
     <>
       <header className={styles.header}>
         <div className={styles.leftSection}>
-          <span className={styles.hamburger}>
+          <span
+            className={styles.hamburger}
+            onClick={() => setmobileMenu(true)}
+          >
             <svg width="16" height="15" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M16 12v3H0v-3h16Zm0-6v3H0V6h16Zm0-6v3H0V0h16Z"
@@ -44,6 +52,7 @@ function Header() {
           <img src={avatar} alt="Avatar" className={styles.avatar} />
         </div>
         {/* <h1>{store.applicationUrl}</h1> */}
+        <MobileMenu showMobileMenu={mobileMenu} handler={mobileMenuHandler} />
       </header>
     </>
   );
